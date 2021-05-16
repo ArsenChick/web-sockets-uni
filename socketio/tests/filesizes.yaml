@@ -1,0 +1,14 @@
+config:
+  target: "ws://localhost:8080"
+  processor: "./script.js"
+  phases:
+    - duration: 30
+      arrivalRate: 5
+  engines:
+    socketio-v3: {}
+
+scenarios:
+  - engine: "socketio-v3"
+    flow:
+      - function: "createSizedMessage"
+      - emit: ["message", "{{ data }}"]

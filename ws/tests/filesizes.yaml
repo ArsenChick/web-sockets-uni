@@ -1,0 +1,13 @@
+config:
+  target: "ws://localhost:8080"
+  processor: "./script.js"
+  phases:
+    - duration: 30
+      arrivalRate: 5
+  ws:
+    rejectUnauthorized: false
+scenarios:
+  - engine: "ws"
+    flow:
+      - function: "createSizedMessage"
+      - send: "{{ data }}"

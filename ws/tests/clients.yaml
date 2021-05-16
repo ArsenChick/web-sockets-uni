@@ -1,0 +1,11 @@
+config:
+  target: "ws://localhost:8080"
+  phases:
+    - duration: 1000
+      arrivalRate: 100
+  ws:
+    rejectUnauthorized: false
+scenarios:
+  - engine: "ws"
+    flow:
+      - think: 500

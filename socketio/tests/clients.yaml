@@ -1,0 +1,12 @@
+config:
+  target: "ws://localhost:8080"
+  phases:
+    - duration: 500
+      arrivalRate: 20
+  engines:
+    socketio-v3: {}
+
+scenarios:
+  - engine: "socketio-v3"
+    flow:
+      - think: 500
